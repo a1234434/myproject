@@ -16,9 +16,10 @@ public class VariableTester {
         boolean pass =false;
         System.out.println(!pass);		
         System.out.println(pass);
-     
-        String s = new String("Hello");
-        System.out.println(s);
+        
+//      String s = new String("Hello");
+//      System.out.println(s);     
+
         Random r = new Random();
         
         int n1 = r.nextInt(6)+1;
@@ -33,6 +34,27 @@ public class VariableTester {
         System.out.println(3==2);
         System.out.println(3>=2);
         System.out.println(3<=2);    
+        
+        String s = new String("Hello");
+        int len = s.length();
+        System.out.println("len:"+len);
+        System.out.println(s.charAt(0));
+// 算術運算子       
+        float f = 9.0f;
+        int x = 5;
+        int y = 3;
+        int z = x % y;
+        float w = x / f ;
+//      int u =(int)( x % f);
+        System.out.println(z);
+        System.out.println(w);
+//位元運算子
+        System.out.println(x >> 1);
+        
+        
+        
+        
+        
 	}
 
 } 
