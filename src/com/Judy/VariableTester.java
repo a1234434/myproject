@@ -50,10 +50,12 @@ public class VariableTester {
         System.out.println(w);
 //位元運算子
         System.out.println(x >> 1);
-        
-        
-        
-        
+// 字串轉整數        
+    String k = "316"; 
+    int d = Integer.parseInt(k);    
+       
+//整數轉字串        (課本 3-39)
+    String q = String.valueOf(d);    
         
 	}
 
