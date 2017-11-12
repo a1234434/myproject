@@ -7,6 +7,8 @@ public class Even {
 	 if (m % 2 == 0){
 	System.out.println("是偶數"); 
 		 
+	 }else {
+		 System.out.println("是奇數");
 	 }
 	}
 
