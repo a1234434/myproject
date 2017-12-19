@@ -36,7 +36,7 @@ public class GameTester {
 				break;
 			case 4:
 				System.out.println("向左");
-				if(pos){
+/*				if(pos){
 					
 				}else{
 					
@@ -62,7 +62,7 @@ public class GameTester {
 			case 0:
 				System.out.print("So Sadddddd!");
 				break;
-
+*/
 			}
 			System.out.println("HP:" + HP);
 		} while (n != 0);
