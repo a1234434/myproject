@@ -5,8 +5,10 @@ public class Student {
 	int math;
 	int chinese;
 	String name;
-
-	
+   static int pass =60;
+	public Student(){
+		
+	}
 //為了讓別人看懂,所以打了全部字母;
 	public Student(String name, int english, int math, int chinese) {
 		this.english = english;
