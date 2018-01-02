@@ -23,7 +23,9 @@ public class 期末練習 {
 		int m;
 		int b;
 		int sum=0;
-        System.out.print("請投入金幣並選擇飲料(a,b,c):");
+        System.out.print("請投入金幣(1元,5元,10元):");
+        System.out.println();
+        System.out.print("選擇飲料(a,b,c):");
 		m=Integer.parseInt(money.nextLine());
 		b=Integer.parseInt(beverage.nextLine());
 		int s=sum+m;
