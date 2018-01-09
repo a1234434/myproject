@@ -1,14 +1,14 @@
 package com.Judy.shop;
 
 public class SliverCustomer extends Customer {
-	float discount =0.1f;
-public SliverCustomer(int discount){	
-	this.discount =discount;	 
+	
+public SliverCustomer(int amount){	
+	super(amount);
+		 super.discount=0.1f;
 }
-@Override
-public void print(){
-	super.print();
+
+
 
 }
- }
+ 
 

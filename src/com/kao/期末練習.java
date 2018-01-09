@@ -15,22 +15,21 @@ https://litotom.com/fju1219/
 
 import java.util.Scanner;
 
+//這禮拜回去要練習,禮拜三晚上
 public class 期末練習 {
 
 	public static void main(String[] args) {
 		Scanner money =new Scanner(System.in);
 		Scanner beverage =new Scanner(System.in);
 		int m;
-		int b;
+		int be;
 		int sum=0;
-        System.out.print("請投入金幣(1元,5元,10元):");
-        System.out.println();
-        System.out.print("選擇飲料(a,b,c):");
+		System.out.println("目前餘額:"+sum);
+        System.out.print("請投入金幣或選擇飲料(a,b,c),或輸入0結束:");
 		m=Integer.parseInt(money.nextLine());
-		b=Integer.parseInt(beverage.nextLine());
+		be=Integer.parseInt(beverage.nextLine());
 		int s=sum+m;
-		System.out.print("目前餘額:"+s);
-		
+		System.out.println("目前餘額:"+s);
 		
 		
 	}
