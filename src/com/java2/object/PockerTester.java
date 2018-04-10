@@ -8,6 +8,12 @@ public class PockerTester {
 		for(int i=0;i<a.length;i++){		
 		System.out.println(a[i]);
 		}
+		/*下面是老師的辦法
+		 * String flowers = "SHDC"; 
+		 * Poker poker = new Poker(); 
+		 * poker.shuffle();
+		 * poker.show();
+		 */
 	}
 
 }
