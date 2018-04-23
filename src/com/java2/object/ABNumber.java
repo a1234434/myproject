@@ -1,5 +1,5 @@
 package com.java2.object;
-//回去繼續
+//以搞懂
 
 public class ABNumber {
 	String number;
@@ -7,7 +7,7 @@ public class ABNumber {
 	public ABNumber(String number) {
 		this.number = number;
 	}
-
+	// validate=驗證
 	public int validate(String secret) {
 		int result = 0;
 		int length = secret.length();
