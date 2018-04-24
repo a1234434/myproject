@@ -1,5 +1,6 @@
 package com.java2.io;
 
+import java.util.List;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -9,110 +10,99 @@ import java.io.InputStreamReader;
 import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.List;
-import java.nio.channels.ShutdownChannelGroupException;
-import com.java2.io.Sales;
+
+import com.java2.io.PracticeSales;
 import com.Judy.shop.Customer;
 import com.Judy.shop.GoldenCustomer;
 import com.Judy.shop.SliverCustomer;
 
-//好難qaq
-
-public class DepartmentStore {
+public class PracticeDemportmentstore {
 	Scanner scanner = new Scanner(System.in);
-
-	public DepartmentStore() {
-
-	}
 
 	public void start() {
 		int function = 0;
 		while (function != 3) {
-			showFunction();
+			showfunction();
 			function = scanner.nextInt();
 			switch (function) {
 			case 1:
-				inputSales();
+				InputSales();
 				break;
 			case 2:
-				List<Sales> list = new ArrayList<>();
+				List<PracticeSales> list = new ArrayList<>();
 				try {
-					FileInputStream fis = new FileInputStream("sales.txt");
+					FileInputStream fis = new FileInputStream("sales2.txt");
 					InputStreamReader isr = new InputStreamReader(fis);
-					BufferedReader in = new BufferedReader(isr);
-					String line = in.readLine();
+					BufferedReader b = new BufferedReader(isr);
+					String line = b.readLine();
 					while (line != null) {
-						// split將字串分割成數個token，得到一個回傳的String array
 						String[] token = line.split("\t");
 						try {
-							int type = Integer.parseInt(token[0]);
+							int rank = Integer.parseInt(token[0]);
 							int amount = Integer.parseInt(token[1]);
-							Sales sales = new Sales(type, amount);
-							list.add(sales);
+							PracticeSales sales2 = new PracticeSales(rank, amount);
+							list.add(sales2);
+
 						} catch (NumberFormatException e) {
 							System.out.println("資料格式錯誤");
 							return;
 						}
-						line = in.readLine();
+						line = b.readLine();
 					}
 				} catch (FileNotFoundException e) {
 					e.printStackTrace();
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
-				// report
-
-				for (Sales sales : list) {
+				for (PracticeSales sales2 : list) {
 					Customer customer = null;
-					switch (sales.getType()) {
+					switch (sales2.rank) {
 					case 1:
-						customer = new Customer(sales.getAmount());
+						customer = new Customer(sales2.getamount());
 						break;
 					case 2:
-						customer = new SliverCustomer(sales.getAmount());
+						customer = new SliverCustomer(sales2.getamount());
 						break;
 					case 3:
-						customer = new GoldenCustomer(sales.getAmount());
+						customer = new GoldenCustomer(sales2.getamount());
 						break;
-
 					}
 					customer.print();
 				}
 				break;
-			case 3:
-				return;
-			}
 
+			case 3:
+				break;
+			}
 		}
 	}
 
-	public void inputSales() {
+	public void InputSales() {
 		try {
-			// append=從後面補資料,如果boolean值是true的時候
-			FileOutputStream fos = new FileOutputStream("sales.txt", true);
-			PrintStream out = new PrintStream(fos);
+			FileOutputStream fos = new FileOutputStream("sales2.txt", true);
+			PrintStream ps = new PrintStream(fos);
 			System.out.print("請輸入會員等級:");
-			int type = scanner.nextInt();
+			int rank = scanner.nextInt();
 			System.out.print("請輸入花費金額:");
 			int amount = scanner.nextInt();
-			out.println(type + "\t" + amount);
-			out.flush();
-			out.close();
+			ps.print(rank + "\t" + amount);
+			ps.flush();
+			ps.close();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
-
 	}
 
-	public void showFunction() {
-		System.out.println("請輸入(1-3):");
-		System.out.println("1)輸入銷售紀錄:");
-		System.out.println("2)輸出銷售報表:");
-		System.out.println("3)結束");
+	public void showfunction() {
+		System.out.println("請選擇1-3:");
+		System.out.println("1)輸入金額:");
+		System.out.println("2)印出報表:");
+		System.out.println("3)結束程式");
 	}
 
 	public static void main(String[] args) {
-		DepartmentStore de = new DepartmentStore();
-		de.start();
+		PracticeDemportmentstore pd = new PracticeDemportmentstore();
+		pd.start();
 	}
+
 }
