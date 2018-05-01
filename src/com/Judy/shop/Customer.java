@@ -1,6 +1,6 @@
 package com.Judy.shop;
 
-public class Customer {
+public class Customer implements Destroyable {
 	int amount;
 	float discount = 0.05f;
 
@@ -10,7 +10,13 @@ public class Customer {
 	}
 
 	public void print() {
-		System.out.println(amount + "\t" + (int)(amount * (1 - discount)));
+		System.out.println(amount + "\t" + (int) (amount * (1 - discount)));
+	}
+
+	@Override
+	public void destroy() {
+		// TODO Auto-generated method stub
+
 	}
 
 }
