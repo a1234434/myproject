@@ -20,10 +20,14 @@ public class SetTester {
 		for (String name : nameSet) {
 			System.out.println(name);
 		}
-		Set<E> sort =(Set<E>) new TreeSet<>(Arrays.asList(6,"postgres","sqlite","oracle","mongodb","postgres","mssql")) ;
-		for(E n : sort) {
-		System.out.println(sort);
+		System.out.println();
+		
+		// 第三個,目前想不出該如何讓6不見qaq
+		Set<String> sortSet = new TreeSet<String>(
+				Arrays.asList("6", "postgres", "sqlite", "oracle", "mongodb", "postgres", "mssql"));
+		for (String sort : sortSet) {
+			System.out.println(sort);
+
 		}
 	}
 }
-
