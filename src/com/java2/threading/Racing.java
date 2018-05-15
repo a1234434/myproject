@@ -27,7 +27,17 @@ public class Racing {
 		HorseRunnable h2 = new HorseRunnable();
 		Thread thr = new Thread(h2);
 		thr.start();
-
+		
+//		join是等待,如此一來,Main ended才會在兩隻馬都跑完後才印出
+        try {
+			h1.join();
+			thr.join();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        System.out.println("Main ended");
+        
 	}
 
 }
