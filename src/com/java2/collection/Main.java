@@ -34,6 +34,11 @@ public class Main {
 		// System.out.println(strArray[i]);
 		// }
 
+		//1.1 List-10 依舊需要思考
+		List<String> yourlist =new ArrayList<String>(Arrays.asList("Google","Oracle","JetBrains"));
+		System.out.print(yourlist);
+		
+//		
 		List<GreekLetter> letterList = new ArrayList<>();
 		letterList.add(new GreekLetter("Gamma", 3));
 		letterList.add(new GreekLetter("Omega", 24));
@@ -60,7 +65,8 @@ public class Main {
 		public String toString() {
 			return "{" + "letter='" + letter + '\'' + ", position=" + position + '}';
 		}
-
+       
+		
 	}
 
 }
