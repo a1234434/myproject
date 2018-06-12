@@ -22,11 +22,12 @@ public class VendingMain {
 			String line = br.readLine();
 			String token[] = line.split(",");
 			int count = Integer.parseInt(token[0]);
-			for (int i = 0; i <= count; i++) {
+			for (int i = 0; i < count; i++) {
 				String name = token[(i * 2 + 1)];
 				int price = Integer.parseInt(token[(i * 2 + 2)]);
-				System.out.println(name+" "+price);
+				vm.drinks.add(new Drink(i+1,name,price));
 			}
+			vm.On();
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
