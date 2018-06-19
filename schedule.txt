@@ -1,4 +1,4 @@
-A001,2,Java,13,3
-A002,3,Calculus,9,3
-A003,4,English,8,2
-A004,5,Chinese,10,2
+A001,Java,2,13,3
+A002,Calculus,3,9,3
+A003,English,4,8,2
+A004,Chinese,5,10,2

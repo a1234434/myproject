@@ -10,15 +10,18 @@ public class VendingMachine {
 	List<Drink> drinks = new ArrayList<>();
 
 	public void On() {
-		System.out.println("Please insert the money:");
+		Scanner money = new Scanner(System.in);
+		Scanner beverage = new Scanner(System.in);
+		System.out.println("請投入金幣或選擇飲料(1,2,3),或輸入0結束:");
 		for (int i = 0; i < drinks.size(); i++) {
 			Drink drink = drinks.get(i);
 			System.out.println(drink.getId() + "\t" + drink.getName() + "\t" + drink.getPrice());
 		}
-		Scanner scanner = new Scanner(System.in);
+		int m=Integer.parseInt(money.nextLine());
+		int b=Integer.parseInt(beverage.nextLine());
 		int data = -1;
 		while (data != 0) {
-			data = scanner.nextInt();
+			data = beverage.nextInt();
 			switch (data) {
 			case 0:
 				break;

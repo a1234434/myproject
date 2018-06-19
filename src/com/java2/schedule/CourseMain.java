@@ -4,6 +4,9 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 /*
  * 有一文字檔存了課表資料(schedule.txt)
@@ -17,15 +20,32 @@ import java.io.IOException;
  * 【有課: C004 English 到 16時 】
  */
 public class CourseMain {
-
-	public static void main(String[] args) {
+         List<Courses> courses =new ArrayList<>();
+	public CourseMain(){
+		readCourse();
+		
+		Scanner scanner =new Scanner(System.in);
+		System.out.println("請輸入星期(1-7):");
+		int weekday =scanner.nextInt();
+		System.out.print("請輸入時(0-24):");
+		int hour =scanner.nextInt();
+		boolean avail =true;
+		if(Courses c :courses){
+			
+		}
+	}
+	public void readCourse(){
 		FileReader fr;
 		try {
 			fr = new FileReader("schedule.txt");
 			BufferedReader in = new BufferedReader(fr);
 			String line = in.readLine();
 			String token[] =line.split(",");
-			
+			String code =token[0];
+			String name =token[1];
+			int weekday=Integer.parseInt(token[2]);
+			int hour=Integer.parseInt(token[3]);
+			int duration=Integer.parseInt(token[4]);
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -33,6 +53,9 @@ public class CourseMain {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	public static void main(String[] args) {
+		
 
 	}
 
