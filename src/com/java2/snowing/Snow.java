@@ -18,7 +18,7 @@ public class Snow extends Thread {
 
 	@Override
 	public void run() {
-		for (int i = 0; i < 800; i++) {
+		for (int i = 0; i < 600; i++) {
 			// System.out.println(getName() + "(" + x + "," + y + ")");
 
 			y = y + 1;

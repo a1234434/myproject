@@ -9,15 +9,16 @@ import java.util.List;
 import javax.swing.JFrame;
 
 public class SnowFrame extends JFrame {
+
 	SnowCanvas canvas = new SnowCanvas();
 
 	public SnowFrame() {
-		setSize(850, 620);
-		setLocation(500, 200);
-		setVisible(true);
+		setSize(850, 650);
+		setLocation(500, 100);
 		add(canvas);
 		canvas.repaint();
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		setVisible(true);
 	}
 
 	public static void main(String[] args) {
