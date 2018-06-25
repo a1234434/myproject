@@ -18,6 +18,18 @@ public class MainPractice {
 		List<Integer> list1 =new ArrayList<>(Arrays.asList(2,0,1,7));
 		System.out.println(list1);
 		
+		//<法一>
+		List<String> nameList = new ArrayList<>(Arrays.asList("Mr.Green", "Mr.Yellow", "Mr.Red"));
+		for(String i : nameList) {
+			System.out.println(i);
+		}
+		//<法二>
+		List<String> nameList1 = new ArrayList<>(Arrays.asList("Mr.Green", "Mr.Yellow", "Mr.Red"));
+		String[] strArray = nameList1.toArray(new String[0]);
+		
+		for(int i=0;i<strArray.length;i++) {
+			System.out.println(strArray[i]);
+		}
 		
 	}
 
