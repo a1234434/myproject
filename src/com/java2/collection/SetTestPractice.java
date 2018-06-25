@@ -16,5 +16,19 @@ public class SetTestPractice {
 	for(String name : nameSet) {
 		System.out.println(name);
 	}
+	
+//絕望還是解不出來qaq	
+	
+	Set<String> sorted =new TreeSet<String>();
+	sorted.size();
+	sorted.add("postgres");
+	sorted.add("sqlite");
+	sorted.add("oracle");
+	sorted.add("mongodb");
+	sorted.add("postgres");
+	sorted.add("mssql");
+	for(String sort :sorted) {
+		System.out.println(sort);
+	}
 	}
 }
