@@ -2,7 +2,7 @@ package com.java2.threading;
 
 public class Horse extends Thread{
 	
-//	回家處理跑出名次的部分
+//	已解決名次問題
 	@Override
 	public void run(){
 		for(int i=0;i<=100;i++){

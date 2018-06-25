@@ -22,7 +22,7 @@ public class SetTester {
 		}
 		System.out.println();
 		
-		// 第三個,目前想不出該如何讓6不見qaq
+		// 第三個,懂6的意思了,但是只有5而已,在parctice那裡的qaq
 		Set<String> sortSet = new TreeSet<String>(
 				Arrays.asList("6", "postgres", "sqlite", "oracle", "mongodb", "postgres", "mssql"));
 		for (String sort : sortSet) {
