@@ -26,6 +26,7 @@ public class MyServerPractice {
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			System.out.println("Eorror!");
 		}
 
 	}
