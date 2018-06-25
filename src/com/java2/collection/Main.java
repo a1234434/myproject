@@ -13,7 +13,7 @@ public class Main {
 		// list.add(0);
 		// list.add(1);
 		// list.add(7);
-
+		
 		// <法二> 我忘記了(qaq),但又找到了(ovo)
 		List<Integer> list = new ArrayList<>(Arrays.asList(2, 0, 1, 7));
 		System.out.println(list);
