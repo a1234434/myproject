@@ -7,24 +7,25 @@ import java.net.UnknownHostException;
 
 import javax.swing.JFrame;
 
-public class Tester extends JFrame {
-	public Tester() {
+public class TestPractice extends JFrame {
+
+	public TestPractice() {
 		setSize(200, 300);
-		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		setVisible(true);
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 	}
 
 	public static void main(String[] args) {
-        System.out.println("Hello!!");
+		System.out.println("Hello!");
 		try {
 			Socket socket = new Socket("ptt.cc", 23);
 			InputStream is = socket.getInputStream();
 			int data = 0;
-			for (int n = 0; n < 5000; n++) {
+			for (int i = 0; i < 5000; i++) {
+
 				data = is.read();
 				System.out.println((char) data);
 			}
-
 			is.close();
 			socket.close();
 		} catch (UnknownHostException e) {
@@ -36,5 +37,4 @@ public class Tester extends JFrame {
 		}
 
 	}
-
 }
