@@ -26,12 +26,22 @@ public class BingoMain {
 
 	public static void main(String[] args) {
 		Bingo bingo = new Bingo();
-        bingo.Bingo();
+		bingo.Bingo();
 		try {
 			FileReader fr = new FileReader("Bingo.txt");
 			BufferedReader in = new BufferedReader(fr);
 			String line = in.readLine();
-			String token[] = line.split(",");
+			// String str;
+			// int line=0 ;
+			// while ((str = in.readLine()) != null) {
+			// line++;
+			//
+			String[] token = line.split(",");
+			int winnum = Integer.parseInt(token[0]);
+			for (int i = 0; i < winnum; i++) {
+				int wnu = Integer.parseInt(token[i]);
+				bingo.wn.add(wnu);
+			}
 
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -40,7 +50,8 @@ public class BingoMain {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
+		
+        bingo.Decide();
 	}
 
 }
