@@ -8,13 +8,23 @@ public class Courses {
     int duration;
     
     public Courses(String code,String name,int weekday,int hours,int duration){
-    	code =this.code;
-    	name=this.name;
-    	weekday=this.weekday;
-    	hours=this.hours;
-    	duration=this.duration;
+    	super();
+    	this.code=code;
+    	this.name=name;
+    	this.weekday=weekday;
+    	this.hours=hours;
+    	this.duration=duration;
     }
-//先按快速鍵,回去再練習
+    
+    public boolean isAvailable(int weekday, int hours) {
+    	boolean avail =true;
+        if(weekday==this.weekday) {
+        	if(hours>=this.hours&&hours<=this.hours+duration) {
+        		return false;
+        	}
+        }
+        return avail;
+    }
 	public String getCode() {
 		return code;
 	}
@@ -54,5 +64,6 @@ public class Courses {
 	public void setDuration(int duration) {
 		this.duration = duration;
 	}
+
     
 }
