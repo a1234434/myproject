@@ -20,10 +20,12 @@ import java.util.Scanner;
  * 【有課: C004 English 到 16時 】
  */
 public class CourseMain {
-         List<Courses> courses =new ArrayList<>();
+	List<Courses> courses = new ArrayList<>();
+
 	public CourseMain(){
 		readCourse();
-		
+int data =-1;
+while(data!=0) {
 		Scanner scanner =new Scanner(System.in);
 		System.out.println("請輸入星期(1-7):");
 		int weekday =scanner.nextInt();
@@ -34,18 +36,20 @@ public class CourseMain {
 			
 		}
 	}
-	public void readCourse(){
+	}
+
+	public void readCourse() {
 		FileReader fr;
 		try {
 			fr = new FileReader("schedule.txt");
 			BufferedReader in = new BufferedReader(fr);
 			String line = in.readLine();
-			String token[] =line.split(",");
-			String code =token[0];
-			String name =token[1];
-			int weekday=Integer.parseInt(token[2]);
-			int hour=Integer.parseInt(token[3]);
-			int duration=Integer.parseInt(token[4]);
+			String token[] = line.split(",");
+			String code = token[0];
+			String name = token[1];
+			int weekday = Integer.parseInt(token[2]);
+			int hour = Integer.parseInt(token[3]);
+			int duration = Integer.parseInt(token[4]);
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -54,8 +58,8 @@ public class CourseMain {
 			e.printStackTrace();
 		}
 	}
+
 	public static void main(String[] args) {
-		
 
 	}
 

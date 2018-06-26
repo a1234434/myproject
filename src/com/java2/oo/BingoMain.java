@@ -1,5 +1,13 @@
 package com.java2.oo;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
 /*
  * 讀取bingo.txt的資料如下:
  * 25
@@ -17,6 +25,21 @@ package com.java2.oo;
 public class BingoMain {
 
 	public static void main(String[] args) {
+		Bingo bingo = new Bingo();
+        bingo.Bingo();
+		try {
+			FileReader fr = new FileReader("Bingo.txt");
+			BufferedReader in = new BufferedReader(fr);
+			String line = in.readLine();
+			String token[] = line.split(",");
+
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 	}
 
