@@ -1,8 +1,10 @@
 package com.java2.oo;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
+import java.util.Set;
 
 public class Bingo {
 	int winnum;
@@ -13,6 +15,7 @@ public class Bingo {
 	int i;
 	int j;
 	String s = new String();
+	Set<Integer> bin = new HashSet();
 	List<Integer> wn = new ArrayList<>();
 
 	public Bingo(int winnum) {
@@ -66,6 +69,7 @@ public class Bingo {
 
 			}
 		}
+
 		for (int i = 0; i < 5; i++) {
 			s = "";
 			for (int j = 0; j < 5; j++) {
@@ -77,23 +81,37 @@ public class Bingo {
 			}
 			System.out.println(s);
 		}
-	
+
 	}
 
 	public void Decide() {
 		System.out.println("New Bingo!");
-		for (int i = 0; i < wn.size(); i++) {
-			s="";
-			if (wn.get(i) == table[i][j]) {
-				String a =Integer.toString(table[i][j]);
-				s = s+" "+a.replace(a, "X");
+		for (i = 0; i < 5; i++) {
+			for (j = 0; j < 5; j++) {
+				int x = -1;
+				do {
+					x = (int) ((Math.random() * 25) + 1);
+				} while (!bin.add(x));
+				table[i][j] = x;
 			}
-			    if (table[i][j] < 10) {
-					s = s + "  " + table[i][j];
+		}
+		for (int n = 0; n < wn.size(); n++) {
+			s = "";
+			for (int y = 0; y < bin.size(); y++) {
+				if (wn.get(n) == get(y)) {
+					s = s + " " + bin.set(bin.get(y), Integer.parseInt("X"));
+					break;
 				} else {
-					s = s + " " + table[i][j];
+					if (bin.get(y) < 10) {
+						s = s + "  " + bin.get(y);
+						break;
+					} else {
+						s = s + " " + bin.get(y);
+						break;
+					}
 				}
 			}
-		System.out.println(s);
+			System.out.println(s);
+		}
 	}
 }
